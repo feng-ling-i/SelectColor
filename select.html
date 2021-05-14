@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        .select {
+            width: 100px;
+            height: 100px;
+        }
+
+        .content {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="color" class="select" />
+    <p class="content"></p>
+    <script>
+        const select = document.querySelector('.select')
+        const content = document.querySelector('.content')
+        const changeColor = (currentColor => {
+            content.innerHTML = currentColor
+        })
+        changeColor(select.value)
+        select.addEventListener('change', (e) => {
+            changeColor(e.target.value)
+        })
+
+
+    </script>
+</body>
+
+</html>
